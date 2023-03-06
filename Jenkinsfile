@@ -18,7 +18,7 @@ pipeline {
         }
         stage('copy build') {
             steps {
-                sh "mkdir -p /tmp/archive/$JOB_NAME/${BUILD_ID} && cp ./target/*.csproj /tmp/archive/$JOB_NAME/${BUILD_ID}/" 
+                sh "mkdir -p /tmp/archive/$JOB_NAME/${BUILD_ID} && cp ./MusicStore/MusicStore.csproj /tmp/archive/$JOB_NAME/${BUILD_ID}/" 
                 sh "aws s3 sync /tmp/archive/$JOB_NAME/${BUILD_ID}/  s3://nagaspring/"
             }
         } 
