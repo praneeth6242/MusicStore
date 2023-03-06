@@ -1,5 +1,5 @@
 pipeline {
-    agent { label 'JAVA_NODE' }
+    agent { label 'JAVA_NODE1' }
     triggers { pollSCM ('* * * * *') } 
     parameters {
         choice(name: 'DOTNET_GOAL', choices: ['restore','build','package', 'install', 'clean'], description: 'Maven Goal')
